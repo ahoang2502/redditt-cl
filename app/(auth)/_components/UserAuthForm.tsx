@@ -36,7 +36,7 @@ export const UserAuthForm = ({ className, ...props }: UserAuthFormProps) => {
 			<Button
 				size="sm"
 				variant="outline"
-				className="w-full"
+				className="w-full rounded-full"
 				onClick={loginWithGoogle}
 				isLoading={isLoading}
 			>
