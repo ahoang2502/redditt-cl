@@ -9,7 +9,7 @@ export const Navbar = () => {
 			<div className="container max-w-7xl h-full mx-auto flex items-center justify-between gap-2">
 				{/* Logo */}
 				<Link href="/" className="flex gap-2 items-center">
-					<Icon.logo className="h-8 w-8 sm:h-7 sm:w-7" />
+					<Icon.logo className="h-8 w-8 " />
 					<p className="hidden text-zinc-700 text-sm font-medium md:block">
 						Breadit
 					</p>
@@ -20,7 +20,7 @@ export const Navbar = () => {
 				{/*  */}
 				<Link
 					href="/sign-in"
-					className="bg-[#ff4500] text-white rounded-3xl py-2 px-4 text-sm font-semibold"
+					className="bg-[#ff4500] text-white rounded-3xl py-2 px-4 font-semibold"
 				>
 					Log In
 				</Link>
