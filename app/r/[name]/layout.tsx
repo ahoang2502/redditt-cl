@@ -94,7 +94,11 @@ const UserLayout = async ({
 							) : null}
 
 							{subreddit.creatorId !== session?.user.id ? (
-								<ToggleSubscribe />
+								<ToggleSubscribe
+									subredditId={subreddit.id}
+									subredditName={subreddit.name}
+									isSubscribed={isSubscribed}
+								/>
 							) : null}
 						</dl>
 					</div>
