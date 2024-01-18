@@ -5,6 +5,7 @@ import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { INFINITE_SCROLLING_PAGINATION_RESULTS } from "@/config";
 import { MiniCreatePost } from "./_components/MiniCreatePost";
+import { PostFeed } from "./_components/PostFeed";
 
 const SubredditDetailsPage = async ({
 	params,
@@ -42,7 +43,8 @@ const SubredditDetailsPage = async ({
 
 			<MiniCreatePost session={session} />
 
-			{/* TODO Show posts in user feed */}
+			{/* Show posts in user feed */}
+			<PostFeed initialPosts={subreddit.posts} subredditName={subreddit.name} />
 		</>
 	);
 };
