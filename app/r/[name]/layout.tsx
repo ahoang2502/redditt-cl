@@ -1,12 +1,14 @@
 import { notFound } from "next/navigation";
 import React from "react";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { format } from "date-fns";
 
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { ToggleSubscribe } from "./_components/ToggleSubscribe";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const UserLayout = async ({
 	children,
@@ -59,18 +61,18 @@ const UserLayout = async ({
 	return (
 		<div className="sm:container max-w-7xl mx-auto h-full pt-12">
 			<div className="">
-				<Button>{/* TODO Take us back */}</Button>
+				
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-4 py-6">
 					<div className="flex flex-col col-span-2 space-y-6">{children}</div>
 
 					{/* INFO sidebar */}
-					<div className="hidden md:block overflow-hidden h-fit rounded-lg border-gray-200 order-first md:order-last">
+					<div className="hidden md:block overflow-hidden h-fit rounded-lg border-zinc-200 order-first md:order-last">
 						<div className="px-6 py-4">
 							<p className="font-semibold py-3">About r/{subreddit.name}</p>
 						</div>
 
-						<dl className="divide-y divide-gray-100 px-6 py-4 text-sm leading-6 bg-white">
+						<dl className="divide-y divide-gray-100 px-6 py-4 text-sm leading-6  bg-white ">
 							<div className="flex justify-between gap-x-4 py-3">
 								<dt className="text-gray-500 ">Created</dt>
 								<dd className="text-gray-700">
@@ -92,7 +94,9 @@ const UserLayout = async ({
 									<p className="text-gray-500">You created this community</p>
 								</div>
 							) : null}
+						</dl>
 
+						<div className=" px-6 pb-4 text-sm leading-6  bg-white">
 							{subreddit.creatorId !== session?.user.id ? (
 								<ToggleSubscribe
 									subredditId={subreddit.id}
@@ -100,7 +104,19 @@ const UserLayout = async ({
 									isSubscribed={isSubscribed}
 								/>
 							) : null}
-						</dl>
+
+							<Link
+								href={`/r/${params.name}/submit`}
+								className={cn(
+									buttonVariants({
+										variant: "outlineOrange",
+										className: "w-full border border-[#d22532] py-[1px]",
+									})
+								)}
+							>
+								Create Post
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>

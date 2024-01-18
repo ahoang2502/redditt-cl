@@ -23,7 +23,10 @@ const buttonVariants = cva(
 				subtle: "hover:bg-zinc-200 bg-zinc-100 text-zinc-900",
 				primaryBlue:
 					"bg-blue-600 text-white font-semibold hover:bg-blue-500/80 rounded-full",
-				outlineBlue: "bg-transparent border border-blue-600 rounded-full text-blue-600 font-semibold hover:bg-blue-100/50",
+				outlineBlue:
+					"bg-transparent border border-blue-600 rounded-full text-blue-600 font-semibold hover:bg-zinc-100",
+				outlineOrange:
+					"bg-transparent border border-[#d22532] rounded-full text-[#d22532] font-semibold hover:bg-zinc-100",
 			},
 			size: {
 				default: "h-10 px-4 py-2",
