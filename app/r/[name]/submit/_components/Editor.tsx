@@ -5,7 +5,7 @@ import TextareaAutosize from "react-textarea-autosize";
 import { usePathname, useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import EditorJS from "@editorjs/editorjs";
+import type EditorJS from "@editorjs/editorjs";
 import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
 
@@ -23,6 +23,9 @@ export const Editor = ({ subredditId }: EditorProps) => {
 	const pathname = usePathname();
 	const router = useRouter();
 
+	const ref = useRef<EditorJS>();
+	const _titleRef = useRef<HTMLTextAreaElement>(null);
+
 	const {
 		register,
 		handleSubmit,
@@ -36,8 +39,6 @@ export const Editor = ({ subredditId }: EditorProps) => {
 		},
 	});
 
-	const ref = useRef<EditorJS>();
-	const _titleRef = useRef<HTMLTextAreaElement>(null);
 
 	const initializeEditor = useCallback(async () => {
 		const EditorJS = (await import("@editorjs/editorjs")).default;
