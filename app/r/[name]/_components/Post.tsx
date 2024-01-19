@@ -4,6 +4,9 @@ import { MessageSquare } from "lucide-react";
 
 import { formatTimeToNow } from "@/lib/utils";
 import { EditorOutput } from "./EditorOutput";
+import { PostVoteClient } from "@/components/post-vote/PostVoteClient";
+
+type PartialVote = Pick<Vote, "type">;
 
 interface PostProps {
 	subredditName: string;
@@ -12,12 +15,16 @@ interface PostProps {
 		votes: Vote[];
 	};
 	commentAmount: number;
+	votesAmt: number;
+	currentVote?: PartialVote;
 }
 
 export const PostComponent = ({
 	subredditName,
 	post,
 	commentAmount,
+	votesAmt,
+	currentVote,
 }: PostProps) => {
 	const postRef = useRef<HTMLDivElement>(null);
 
@@ -27,6 +34,11 @@ export const PostComponent = ({
 		<div className="rounded-md bg-white shadow ">
 			<div className="px-6 py-4 flex justify-between">
 				{/* PostVotes */}
+				<PostVoteClient
+					initialVotesAmount={votesAmt}
+					postId={post.id}
+					initialVote={currentVote?.type}
+				/>
 
 				<div className="w-0 flex-1 ">
 					<div className="max-h-40 mt-1 text-xs text-gray-500">

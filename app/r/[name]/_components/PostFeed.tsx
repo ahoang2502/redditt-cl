@@ -69,6 +69,8 @@ export const PostFeed = ({ initialPosts, subredditName }: PostFeedProps) => {
 								subredditName={post.subreddit.name}
 								post={post}
 								commentAmount={post.comments.length}
+								currentVote={currentVote}
+								votesAmt={votesAmt}
 							/>
 						</li>
 					);
@@ -79,6 +81,8 @@ export const PostFeed = ({ initialPosts, subredditName }: PostFeedProps) => {
 							subredditName={post.subreddit.name}
 							post={post}
 							commentAmount={post.comments.length}
+							currentVote={currentVote}
+							votesAmt={votesAmt}
 						/>
 					);
 				}
