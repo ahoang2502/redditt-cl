@@ -159,7 +159,7 @@ export const Editor = ({ subredditId }: EditorProps) => {
 			router.refresh();
 
 			return toast({
-				title: "Successfully posted",
+				title: "Successfully posted!",
 			});
 		},
 	});
