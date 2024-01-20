@@ -5,14 +5,23 @@ import { Comment, CommentVote, User } from "@prisma/client";
 
 import { UserAvatar } from "../UserAvatar";
 import { formatTimeToNow } from "@/lib/utils";
+import { CommentVotes } from "./CommentVotes";
 
 type ExtendedComment = Comment & { votes: CommentVote[]; author: User };
 
 interface PostCommentProps {
+	postId: string;
 	comment: ExtendedComment;
+	votesAmt: number;
+	currentVote: CommentVote | undefined;
 }
 
-export const PostComment = ({ comment }: PostCommentProps) => {
+export const PostComment = ({
+	comment,
+	votesAmt,
+	currentVote,
+	postId,
+}: PostCommentProps) => {
 	const commentRef = useRef<HTMLDivElement>(null);
 
 	return (
@@ -39,7 +48,13 @@ export const PostComment = ({ comment }: PostCommentProps) => {
 
 			<p className="text-sm text-zinc-900 mt-2">{comment.text}</p>
 
-            
+			<div className="flex gap-2 items-center ">
+				<CommentVotes
+					commentId={comment.id}
+					initialVotesAmount={votesAmt}
+					initialVote={currentVote}
+				/>
+			</div>
 		</div>
 	);
 };
