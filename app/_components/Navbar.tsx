@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { getAuthSession } from "@/lib/auth";
 import { UserButton } from "./UserButton";
+import { SearchBar } from "./SearchBar";
 
 export const Navbar = async () => {
 	const session = await getAuthSession();
@@ -19,8 +20,9 @@ export const Navbar = async () => {
 				</Link>
 
 				{/* Search bar */}
+				<SearchBar />
 
-				{/*  */}
+				{/* User Button */}
 				{session?.user ? (
 					<UserButton user={session.user} />
 				) : (
