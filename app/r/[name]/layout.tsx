@@ -9,6 +9,7 @@ import { db } from "@/lib/db";
 import { ToggleSubscribe } from "./_components/ToggleSubscribe";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { ToFeedButton } from "./_components/ToFeedButton";
 
 const UserLayout = async ({
 	children,
@@ -61,7 +62,7 @@ const UserLayout = async ({
 	return (
 		<div className="sm:container max-w-7xl mx-auto h-full pt-12">
 			<div className="">
-				
+				<ToFeedButton />
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-4 py-6">
 					<div className="flex flex-col col-span-2 space-y-6">{children}</div>
