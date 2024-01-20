@@ -1,3 +1,1 @@
-orange=#ff4500
-
-Editorjs
+https://project-breadit.vercel.app/
