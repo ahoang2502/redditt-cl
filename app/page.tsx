@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 import { CustomFeed } from "./_components/CustomFeed";
 import { GeneralFeed } from "./_components/GeneralFeed";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
 	const session = await getAuthSession();
 
