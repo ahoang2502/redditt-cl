@@ -9,7 +9,8 @@ import { db } from "@/lib/db";
 import { ToggleSubscribe } from "./_components/ToggleSubscribe";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { ToFeedButton } from "./_components/ToFeedButton";
+import ToFeedButton from "./_components/ToFeedButton";
+
 
 const UserLayout = async ({
 	children,
