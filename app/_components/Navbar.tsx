@@ -13,7 +13,7 @@ export const Navbar = async () => {
 				{/* Logo */}
 				<Link href="/" className="flex gap-2 items-center">
 					<Icon.logo className="h-10 w-10 " />
-					<p className="hidden text-zinc-700 text-sm font-medium md:block">
+					<p className="hidden text-zinc-700 text-lg font-semibold md:block">
 						Breadit
 					</p>
 				</Link>

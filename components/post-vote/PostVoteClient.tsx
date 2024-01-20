@@ -87,7 +87,7 @@ export const PostVoteClient = ({
 				aria-label="up-vote"
 			>
 				<ArrowBigUp
-					className={cn("h-6 w-6 text-zinc-700", {
+					className={cn("h-5 w-5 text-zinc-700", {
 						"text-emerald-500 fill-emerald-500": currentVote === "UP",
 					})}
 				/>
@@ -104,7 +104,7 @@ export const PostVoteClient = ({
 				aria-label="down-vote"
 			>
 				<ArrowBigDown
-					className={cn("h-6 w-6 text-zinc-700", {
+					className={cn("h-5 w-5 text-zinc-700", {
 						"text-red-500 fill-red-500": currentVote === "DOWN",
 					})}
 				/>
