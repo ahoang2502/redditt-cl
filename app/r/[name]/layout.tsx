@@ -1,15 +1,15 @@
 import { notFound } from "next/navigation";
 import React from "react";
 
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { format } from "date-fns";
 
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { ToggleSubscribe } from "./_components/ToggleSubscribe";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import ToFeedButton from "./_components/ToFeedButton";
+import { ToggleSubscribe } from "./_components/ToggleSubscribe";
 
 
 const UserLayout = async ({
