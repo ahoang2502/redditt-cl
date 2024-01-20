@@ -55,7 +55,7 @@ export const PostComponent = ({
 							</>
 						) : null}
 
-						<span className="mr-1">Posted by u/{post.author.name}</span>
+						<span className="mr-1">Posted by u/{post.author.username}</span>
 
 						{formatTimeToNow(new Date(post.createdAt))}
 					</div>
