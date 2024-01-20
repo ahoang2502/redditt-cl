@@ -20,7 +20,7 @@ export async function POST(req: Request) {
 				userId: session.user.id,
 			},
 		});
-		if (existingSubscription)
+		if (!existingSubscription)
 			return new Response("Subscribe to post", { status: 400 });
 
 		await db.post.create({
